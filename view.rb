@@ -2,6 +2,10 @@ require_relative ('controller')
 
 class View
 
+  def gets_user_input
+    gets.chomp
+  end
+
   def clear_screen
     print "\e[H"
     print "\e[2J"
