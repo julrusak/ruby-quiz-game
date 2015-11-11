@@ -1,17 +1,20 @@
 require_relative ('controller')
 
 class Game
-
+attr_reader :quiz
   def initialize
     @quiz = Quiz.new
     @questions = []
     @answered = []
   end
 
+  def game_start
+    quiz.setup_quiz
+  end
+
 end
 
 class Quiz
-
 attr_reader :capitals
 
   def initilize
@@ -67,6 +70,10 @@ attr_reader :capitals
       'Madison' => 'Wisconsin'
       'Cheyenne' => 'Wyoming'
     }
+  end
+
+  def setup_quiz
+
   end
 
 end
