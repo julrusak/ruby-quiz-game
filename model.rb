@@ -11,6 +11,9 @@ class Game
 end
 
 class Quiz
+
+attr_reader :capitals
+
   def initilize
     @capitals= {
       'Montgomery' => 'Alabama'
@@ -66,4 +69,13 @@ class Quiz
     }
   end
 
+end
+
+class Capitals
+attr_reader :state, :capital
+
+  def initialize(args = {})
+    @state = args[:state]
+    @capital = args[:capital]
+  end
 end
