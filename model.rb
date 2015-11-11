@@ -71,7 +71,7 @@ attr_reader :capitals
 
 end
 
-class Capitals
+class Capital
 attr_reader :state, :capital
 
   def initialize(args = {})
