@@ -1,7 +1,7 @@
 require_relative ('controller')
 
 class Game
-attr_reader :quiz
+attr_reader :quiz, :question, :available
   def initialize
     @quiz = Quiz.new
     @question = nil
@@ -13,6 +13,10 @@ attr_reader :quiz
     @quiz.capitals.each do |capital, state|
       @questions << Capital.new(:capital => capital, :state => state)
     end
+  end
+
+  def get_question
+    self.question = available.shift
   end
 end
 
