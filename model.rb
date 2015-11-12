@@ -8,8 +8,10 @@ attr_reader :quiz
     @answered = []
   end
 
-  def game_start
-    quiz.setup_quiz
+  def setup_game
+    @quiz.capitals.each do |capital, state|
+      @questions << Capital.new(:capital => capital, :state => state)
+    end
   end
 
 end
@@ -71,18 +73,13 @@ attr_reader :capitals
       'Cheyenne' => 'Wyoming'
     }
   end
-
-  def setup_quiz
-
-  end
-
 end
 
 class Capital
 attr_reader :state, :capital
 
   def initialize(args = {})
-    @state = args[:state]
     @capital = args[:capital]
+    @state = args[:state]
   end
 end
