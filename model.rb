@@ -69,6 +69,7 @@ attr_accessor :question
   end
 
   def get_question
+    available.shuffle!
     self.question = available.shift
   end
 

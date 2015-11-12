@@ -28,6 +28,7 @@ attr_reader :view, :game
       else
         view.incorrect_answer
       end
+      sleep 0.2
       view.clear_screen
     end
   end
