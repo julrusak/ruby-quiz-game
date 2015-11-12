@@ -22,6 +22,14 @@ attr_reader :view, :game
       view.display_state(game.get_question)
       guess = view.gets_user_input
       result = game.user_guess(guess)
+      if result == true
+        view.correct_answer
+        game.correct_guess
+      else
+        view.incorrect_answer
+      end
+      view.clear_screen
+    end
   end
 
 
