@@ -11,7 +11,7 @@ attr_reader :quiz, :question, :available
 
   def setup_game
     @quiz.capitals.each do |capital, state|
-      @questions << Capital.new(:capital => capital, :state => state)
+      @available << Capital.new(:capital => capital, :state => state)
     end
   end
 
