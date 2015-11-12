@@ -1,5 +1,5 @@
 require_relative ('controller')
-
+require 'pry'
 class Game
 attr_reader :quiz, :question, :available
   def initialize
@@ -10,6 +10,7 @@ attr_reader :quiz, :question, :available
   end
 
   def setup_game
+    binding.pry
     @quiz.capitals.each do |capital, state|
       available << Capital.new(:capital => capital, :state => state)
     end
