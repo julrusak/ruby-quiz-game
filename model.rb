@@ -4,7 +4,8 @@ class Game
 attr_reader :quiz
   def initialize
     @quiz = Quiz.new
-    @questions = []
+    @question = nil
+    @available = []
     @answered = []
   end
 
@@ -13,7 +14,15 @@ attr_reader :quiz
       @questions << Capital.new(:capital => capital, :state => state)
     end
   end
+end
 
+class Capital
+attr_reader :state, :capital
+
+  def initialize(args = {})
+    @capital = args[:capital]
+    @state = args[:state]
+  end
 end
 
 class Quiz
@@ -75,11 +84,3 @@ attr_reader :capitals
   end
 end
 
-class Capital
-attr_reader :state, :capital
-
-  def initialize(args = {})
-    @capital = args[:capital]
-    @state = args[:state]
-  end
-end
