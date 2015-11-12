@@ -10,6 +10,4 @@ class QuizGame
   end
 
 
-
-
 end

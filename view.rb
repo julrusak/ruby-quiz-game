@@ -11,4 +11,8 @@ class View
     print "\e[2J"
   end
 
+  def greeting
+    clear_screen
+    puts "\n Do you know your U.S. State capitals?\n\n Ready to find out?\n Press enter!"
+  end
 end
