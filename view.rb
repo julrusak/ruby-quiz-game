@@ -17,8 +17,8 @@ class View
     gets_user_input
   end
 
-  def display_state
-    puts "What is the capital of #{}"
+  def display_state(question)
+    puts "What is the capital of #{state}"
   end
 
   def correct_answer

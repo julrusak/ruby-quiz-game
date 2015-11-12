@@ -11,13 +11,20 @@ attr_reader :quiz, :question, :available
 
   def setup_game
     @quiz.capitals.each do |capital, state|
-      @available << Capital.new(:capital => capital, :state => state)
+      available << Capital.new(:capital => capital, :state => state)
     end
   end
 
   def get_question
     self.question = available.shift
   end
+
+  def finished?
+    available.empty?
+  end
+
+  def user_guess(guess)
+    guess == question.capital ? true : false
 end
 
 class Capital
