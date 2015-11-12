@@ -13,7 +13,7 @@ attr_reader :view, :game
   def start
     view.clear_screen
     view.greeting
-    game.setup_game
+    game.create_questions
     play_quiz
   end
 

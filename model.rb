@@ -1,51 +1,10 @@
 require_relative ('controller')
 require 'pry'
 class Game
-attr_reader :quiz, :question, :available
+attr_reader :capitals, :available
+attr_accessor :question
+
   def initialize
-    @quiz = Quiz.new
-    @question = nil
-    @available = []
-    @answered = []
-  end
-
-  def setup_game
-    binding.pry
-    @quiz.capitals.each do |capital, state|
-      available << Capital.new(:capital => capital, :state => state)
-    end
-  end
-
-  def get_question
-    self.question = available.shift
-  end
-
-  def finished?
-    available.empty?
-  end
-
-  def user_guess(guess)
-    guess == question.capital ? true : false
-  end
-
-  def correct_guess
-    @answered << self.question
-  end
-end
-
-class Capital
-attr_reader :state, :capital
-
-  def initialize(args = {})
-    @capital = args[:capital]
-    @state = args[:state]
-  end
-end
-
-class Quiz
-attr_reader :capitals
-
-  def initilize
     @capitals = {
       'Montgomery' => 'Alabama',
       'Juneau' => 'Alaska',
@@ -98,6 +57,47 @@ attr_reader :capitals
       'Madison' => 'Wisconsin',
       'Cheyenne' => 'Wyoming'
     }
+    @question = nil
+    @available = []
+    @answered = []
+  end
+
+  def create_questions
+    capitals.each do |capital, state|
+      available << Capital.new(:capital => capital, :state => state)
+    end
+  end
+
+  def get_question
+    self.question = available.shift
+  end
+
+  def finished?
+    available.empty?
+  end
+
+  def user_guess(guess)
+    guess == question.capital ? true : false
+  end
+
+  def correct_guess
+    @answered << self.question
   end
 end
+
+class Capital
+attr_reader :state, :capital
+
+  def initialize(args = {})
+    @capital = args[:capital]
+    @state = args[:state]
+  end
+end
+
+
+
+
+
+
+
 

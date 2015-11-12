@@ -18,7 +18,7 @@ class View
   end
 
   def display_state(question)
-    puts "What is the capital of #{state}"
+    puts "What is the capital of #{question.state}?"
   end
 
   def correct_answer
