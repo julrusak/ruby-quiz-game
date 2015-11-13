@@ -34,6 +34,7 @@ attr_reader :view, :game
       end
       view.clear_screen
     end
+    view.show_score(game.score)
   end
 
 

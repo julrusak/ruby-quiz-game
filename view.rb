@@ -28,4 +28,8 @@ class View
   def incorrect_answer(question)
     puts "\n\n  Incorrect!\n\n  The correct answer is #{question.capital}"
   end
+
+  def show_score(score)
+    puts "You got #{score} correct!"
+  end
 end

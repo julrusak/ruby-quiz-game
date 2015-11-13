@@ -84,6 +84,10 @@ attr_accessor :question
   def correct_guess
     @answered << self.question
   end
+
+  def score
+    @answered.length
+  end
 end
 
 class Capital
