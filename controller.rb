@@ -29,7 +29,6 @@ attr_reader :view, :game
         sleep 1
       else
         view.incorrect_answer(game.question)
-        puts game.available
         sleep 2
       end
       view.clear_screen
