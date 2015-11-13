@@ -30,6 +30,10 @@ class View
   end
 
   def show_score(score)
-    puts "You got #{score} correct!"
+    puts "You got #{score} correct!\n\n Would you like to play again?\n\n Y or N?"
+  end
+
+  def closing
+    puts "Thanks for playing!"
   end
 end

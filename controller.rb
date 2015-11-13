@@ -17,6 +17,12 @@ attr_reader :view, :game
     play_quiz
   end
 
+  def restart
+    view.clear_screen
+    game.create_questions
+    play_quiz
+  end
+
   def play_quiz
     view.clear_screen
     until game.finished?
@@ -34,7 +40,13 @@ attr_reader :view, :game
       view.clear_screen
     end
     view.show_score(game.score)
+    choice = view.gets_user_input
+      if choice.upcase == "Y"
+        restart
+      else
+        view.clear_screen
+        view.closing
+      end
   end
-
 
 end
