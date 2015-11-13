@@ -13,19 +13,19 @@ class View
 
   def greeting
     clear_screen
-    puts "\n Do you know your U.S. State capitals?\n\n Ready to find out?\n Press enter!"
+    puts "\n  Do you know your U.S. State capitals?\n\n  Ready to find out?\n  Press enter!"
     gets_user_input
   end
 
   def display_state(question)
-    puts "What is the capital of #{question.state}?"
+    puts "\n\n  What is the capital of #{question.state}?"
   end
 
   def correct_answer
-    puts "Correct!"
+    puts "\n\n  Correct!"
   end
 
   def incorrect_answer(question)
-    puts "Incorrect!\n\n The correct answer is #{question.capital}"
+    puts "\n\n  Incorrect!\n\n  The correct answer is #{question.capital}"
   end
 end

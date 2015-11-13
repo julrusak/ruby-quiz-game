@@ -18,6 +18,7 @@ attr_reader :view, :game
   end
 
   def play_quiz
+    view.clear_screen
     until game.finished?
       view.display_state(game.get_question)
       guess = view.gets_user_input
