@@ -25,7 +25,7 @@ class View
     puts "Correct!"
   end
 
-  def incorrect_answer
-    puts "Incorrect!"
+  def incorrect_answer(question)
+    puts "Incorrect!\n\n The correct answer is #{question.capital}"
   end
 end

@@ -25,10 +25,11 @@ attr_reader :view, :game
       if result == true
         view.correct_answer
         game.correct_guess
+        sleep 1
       else
-        view.incorrect_answer
+        view.incorrect_answer(game.question)
+        sleep 2
       end
-      sleep 0.2
       view.clear_screen
     end
   end
