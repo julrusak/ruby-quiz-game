@@ -1,5 +1,4 @@
 require_relative ('controller')
-require 'pry'
 class Game
 attr_reader :capitals, :available
 attr_accessor :question
